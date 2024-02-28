@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人網站</title>
+    <style>
+        /* 基本樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        h1 {
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>23吳明傑</h1>
+        <nav>
+            <a href="index.html">首頁</a>
+            <a href="about.html" >關於我</a>
+            <a href="photoList-23.html">照片收藏</a>
+            <a href="Videos-23.html">影片收藏</a>
+            <a href="Links.html">我的推薦</a>
+			<a href="slide.html">幻燈片</a>
+			<a href="form.html"style="color:#00FFEA;font-size:20px;">圖片上傳</a>
+        </nav>
+    </header>
+    <div class="container">
+
+        <h2>假如你也跟我一樣喜歡甘城なつき的話，可以提供更多圖片給我上傳到這個網站</h2>
+
+
+		<!-- 請自行修改表單內容為:客服詢問/加入會員/訂購表單或任何內容 -->		  
+		<!-- 請務必重新設計表單欄位內容 -->		  
+
+		  <form id="myForm">
+			<label>姓名:</label>
+			<input type="text" name="name" value="請打上你的名字或暱稱" title="姓名" style="width:160px;">
+
+			<BR><BR>
+
+			<label> Email:</label>
+			<input type="email" name="email" value="請打上你的電子郵件" title="電子郵件" style="width:180px;">
+
+			<BR><BR>
+
+			<!-- 請試著調整可輸入值的範圍 -->
+			<label>年齡:</label>
+			<input type="number" name="age" title="請輸入年齡" style="width:50px;" min="12" max="150" value="16">
+
+			<BR><BR>
+
+			<!-- 請試著添加選項, 並把預設值設定在你想要的那個欄位上 -->
+			<label>性別:</label>
+			<input type="radio" name="gender" value="男">男
+			<input type="radio" name="gender" value="女">女
+			<input type="radio" name="gender" value="保密">保密
+			<input type="radio" name="gender" value="嘿嘿"checked>嘿嘿
+
+			<BR><BR>
+
+			<!-- 請試著添加選項, 並把預設值設定在你想要的那個欄位上 -->
+			<label>喜歡的風格:</label>
+			<input type="checkbox" name="interest" value="時尚">時尚
+			<input type="checkbox" name="interest" value="運動">運動
+			<input type="checkbox" name="interest" value="女僕">女僕
+			<input type="checkbox" name="interest" value="泳裝">泳裝
+			<input type="checkbox" name="interest" value="學生">學生
+			<input type="checkbox" name="interest" value="老師">老師
+			<input type="checkbox" name="interest" value="鄰家">鄰家
+			<input type="checkbox" name="interest" value="我什麼都愛，XP無限大"checked>我什麼都愛，XP無限大
+
+			<BR><BR>
+
+			<!-- 請試著添加選項, 並把預設值設定在你想要的那個欄位上 -->
+			<label>喜歡甘城なつき的程度:</label>
+			<select name="city">
+				<option value="喜歡"selected >喜歡</option>
+				<option value="很喜歡">很喜歡</option>
+				<option value="非常喜歡">非常喜歡</option>
+				<option value="超級喜歡">超級喜歡</option>
+				<option value="無敵喜歡">無敵喜歡</option>
+				<option value="無敵霹靂喜歡">無敵霹靂喜歡</option>
+				<option value="宇宙無敵霹靂喜歡">宇宙無敵霹靂喜歡</option>
+				<option value="超級宇宙無敵霹靂喜歡">超級宇宙無敵霹靂喜歡</option>
+				<option value="最喜歡">最喜歡</option>
+
+			</select>
+
+			<BR><BR>
+
+			<label>想要提交的圖片原圖網址:</label>
+			<textarea name="memo" rows="6" cols="80" title="請輸入備註"></textarea>
+
+			<BR><BR>
+
+			<input type="submit" value="上交你完美神聖的圖片">
+		  </form>
+
+		  <HR>
+
+		  <div id="result"></div>
+
+    </div>
+
+    <script>
+		//這段是用控制當使用者按下提交鍵後的顯示處理
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // 取回目前表單資料
+            var formData = new FormData(this);
+
+            // 顯示結果在DIV內
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<h3>結果:</h3>';
+            
+            formData.forEach(function (value, key) {
+                resultDiv.innerHTML += '<p>' + key + ': ' + value + '</p>';
+            });
+        });
+    </script>
+</body>
+</html>
